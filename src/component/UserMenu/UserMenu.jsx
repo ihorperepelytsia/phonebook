@@ -1,18 +1,25 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "../Nav/Nav.styled";
-import authSelectors from "../../redux/auth/auth-selectors";
-import { logOut } from "../../redux/auth/auth-operations";
-const UserMenu = () => {
-  const userName = useSelector(authSelectors.getUsername);
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { ImExit } from 'react-icons/im';
+import { MdAccountCircle } from 'react-icons/md';
+import { getUsername } from 'redux/auth/auth-selectors';
+import { logOut } from 'redux/auth/auth-operations';
+import { Div, Button, Span } from './UserMenu.styled';
+
+export const UserMenu = () => {
+  const userName = useSelector(getUsername);
   const dispatch = useDispatch();
   return (
     <>
-      <Link to="/contacts">Contacts</Link>
-      <span>Hello : {userName}</span>
-      <button onClick={() => dispatch(logOut())}>Log out</button>
+      <Div>
+        <Span>
+          Welcome, <MdAccountCircle /> {userName}
+        </Span>
+        <Button onClick={() => dispatch(logOut())}>
+          <span>Log out</span>
+          <ImExit />
+        </Button>
+      </Div>
     </>
   );
 };
-
-export default UserMenu;

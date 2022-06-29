@@ -1,10 +1,10 @@
-import React from "react";
-import { onChangeFilterStore } from "../../redux/contactsSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { getFilter } from "../../redux/selectors";
-import { Label, Input } from "../ContactForm/ContactForm.styled";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { onChangeFilterStore } from 'redux/contacts/contactsSlice';
+import { getFilter } from 'redux/contacts/contactsSelectors';
+import { Label, Input } from 'component/ContactForm/ContactForm.styled';
 
-const Filter = () => {
+export const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   const onChangeFilter = ({ target: { value } }) => {
@@ -17,5 +17,3 @@ const Filter = () => {
     </Label>
   );
 };
-
-export default Filter;

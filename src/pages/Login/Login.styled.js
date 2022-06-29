@@ -1,13 +1,21 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Div = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Links = styled(Link)`
+  color: black;
+  text-decoration: none;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 14px;
 
-  @media (min-width: 768px) {
-    flex-direction: inherit;
-    justify-content: space-around;
+  transition: all linear 200ms;
+
+  &:hover {
+    color: red;
   }
+`;
+export const Div = styled.div`
+  margin-bottom: 10px;
 `;
 export const Span = styled.span`
   font-size: 12px;
@@ -19,7 +27,6 @@ export const Form = styled.form`
 `;
 export const Label = styled.label`
   display: block;
-  margin-top: 4px;
   margin-bottom: 4px;
 `;
 export const Input = styled.input`

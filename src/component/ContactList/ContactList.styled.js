@@ -1,30 +1,57 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 export const List = styled.ul`
-  list-style-type: circle;
+  list-style: none;
+  padding: 10px;
 `;
 export const Items = styled.li`
   display: flex;
-  margin: 8px;
+  justify-content: space-between;
+  margin: 4px;
+  border-bottom: 1px solid rgb(53, 64, 95);
+
+  &:last-child {
+    border-bottom: none;
+  }
 `;
-export const Text = styled.p`
-  min-width: 175px;
+export const Text = styled.div`
+  width: 120px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
   margin: 0;
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+`;
+export const NumberPhone = styled.p`
+  word-break: break-all;
+`;
+export const NameContact = styled.p`
+  word-break: break-all;
 `;
 export const Button = styled.button`
-  width: max-content;
-  margin-left: 16px;
   border: none;
   color: white;
-  background-color: blue;
-  padding: 4px;
+  background-color: rgb(53, 64, 95);
+  padding: 1px 11px;
   border-radius: 5px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-
-  svg {
-    margin-left: 4px;
+  margin-right: 10px;
+  &:hover {
+    background-color: rgb(0, 60, 255);
   }
+  svg {
+    vertical-align: text-top;
+  }
+`;
+
+export const Spinner = styled.div`
+  width: 80px;
+  margin: 0 auto;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  align-items: center;
 `;

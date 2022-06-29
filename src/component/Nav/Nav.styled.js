@@ -1,20 +1,21 @@
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Header = styled.header`
-  padding-bottom: 5px;
-  padding: 25px 0 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 16px;
   border-bottom: 1px solid grey;
+  background-color: rgb(53, 64, 95);
+  color: rgb(255, 255, 255);
+  margin-bottom: 40px;
 `;
-export const Link = styled(NavLink)`
-  font-size: 24px;
+
+export const Logo = styled(Link)`
+  font-size: 30px;
   text-decoration: none;
   color: blue;
-  margin: 16px;
+  margin: 0;
   transition: all linear 400ms;
-
-  &.active {
-    color: red;
-    pointer-events: none;
-  }
+  color: rgb(255, 255, 255);
 `;
